@@ -1,5 +1,5 @@
 import random as r
-from timer import Timer 
+from LAB_1.timer import Timer 
 def selection_sort(arr: list[int]) -> list[int]:
     for i in range(len(arr)):
         min_index = i
