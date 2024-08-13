@@ -44,8 +44,6 @@ def main()-> None:
     for key, value in test_cases.items():
 
         t1 = Timer()
-        t2 = Timer()
-
         t1.start()
         bubble_sort(value)
         t1.stop()
@@ -61,7 +59,6 @@ def main()-> None:
     for key, value in test_cases.items():
 
         t2 = Timer()
-
         t2.start()
         selection_sort(value)
         t2.stop()
