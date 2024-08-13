@@ -1,5 +1,5 @@
 import random as r
-from LAB_1.timer import Timer 
+from timer import Timer 
 def selection_sort(arr: list[int]) -> list[int]:
     for i in range(len(arr)):
         min_index = i
@@ -11,30 +11,58 @@ def selection_sort(arr: list[int]) -> list[int]:
 
 
 def bubble_sort(arr: list[int]) -> list[int]:
+    counter:int = 0 
     for i in range(len(arr)):
         for j in range(len(arr) - i - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                counter += 1
+        
+        if counter == 0:
+            break
     return arr
 
 
-arr1 = [r.randint(0, 100000) for i in range(10)]  
-arr2 = [r.randint(0, 100000) for i in range(20)] 
-arr3 = [r.randint(0, 100000) for i in range(30)] 
-arr4 = [r.randint(0, 100000) for i in range(40)] 
-arr5 = [r.randint(0, 100000) for i in range(50)] 
-arr6 = [r.randint(0, 100000) for i in range(100)] 
-arr7 = [r.randint(0, 100000) for i in range(1000)]
-arr8 = [r.randint(0, 100000) for i in range(10000)]
 
-t1= Timer()
+def main()-> None:
+    test_cases:dict = {}
 
-t1.start()
-bubble_sort(arr8)
-t1.stop()
+    test_cases['10'] = [r.randint(0, 100000) for i in range(10)]  
+    test_cases['20'] = [r.randint(0, 100000) for i in range(20)] 
+    test_cases['30'] = [r.randint(0, 100000) for i in range(30)] 
+    test_cases['40'] = [r.randint(0, 100000) for i in range(40)] 
+    test_cases['50'] = [r.randint(0, 100000) for i in range(50)] 
+    test_cases['100'] = [r.randint(0, 100000) for i in range(100)] 
+    test_cases['1000'] = [r.randint(0, 100000) for i in range(1000)]
+    test_cases['10000'] = [r.randint(0, 100000) for i in range(10000)]
 
-t2 =Timer()
 
-t2.start()
-selection_sort(arr8) 
-t2.stop()
+    print('bubble sort')
+    
+    for key, value in test_cases.items():
+
+        t1 = Timer()
+
+        t1.start()
+        bubble_sort(value)
+        t1.stop()
+
+        print(f'{key} : {t1.elapsed()}')
+
+    print('')
+
+    print('selection sort')
+
+    for key, value in test_cases.items():
+
+        t2 = Timer()
+
+        t2.start()
+        selection_sort(value)
+        t2.stop()
+
+        print(f'{key} : {t2.elapsed()}')
+
+
+if __name__ == '__main__':
+    main()
