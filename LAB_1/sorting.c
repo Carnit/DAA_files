@@ -5,7 +5,6 @@
 void selection_sort(int arr[], int n)
 {
     int i, j, min_index;
-
     for (i = 0; i < n - 1; i++)
     {
         min_index = i;
@@ -75,10 +74,7 @@ void generate_random_array(int arr[], int n)
 }
 int main()
 {
-    // Seed random number generator
     srand(time(0));
-
-    // Arrays of different sizes
     int sizes[] = {10, 20, 30, 40};
 
     for (int k = 0; k < 4; k++)
@@ -86,34 +82,27 @@ int main()
         int n = sizes[k];
 
         int arr1[n], arr2[n], arr3[n];
-
-        // Generate random arrays
         generate_random_array(arr1, n);
         generate_random_array(arr2, n);
         generate_random_array(arr3, n);
-
-        // Selection Sort
-        clock_t start_time = clock(); 
+        
+        /*clock_t start_time = clock(); 
         selection_sort(arr1, n);
         clock_t end_time = clock(); 
         double time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
-        printf("Selection Sort on array of size %d took %f seconds\n", n, time_taken);
+        printf("Selection Sort on array of size %d took %f seconds\n", n, time_taken);*/
 
-        // Bubble Sort
-        start_time = clock(); 
+        clock_t start_time = clock(); 
         bubble_sort(arr2, n);
-        end_time = clock(); 
-        time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
+        clock_t end_time = clock(); 
+        double time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
         printf("Bubble Sort on array of size %d took %f seconds\n", n, time_taken);
 
-        // Insertion Sort
-        start_time = clock(); 
+        /* start_time = clock(); 
         insertion_sort(arr3, n);
         end_time = clock(); 
         time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
-        printf("Insertion Sort on array of size %d took %f seconds\n", n, time_taken);
-
-        printf("\n");
+        printf("Insertion Sort on array of size %d took %f seconds\n", n, time_taken);*/
     }
 
     return 0;

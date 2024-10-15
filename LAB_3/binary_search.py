@@ -2,7 +2,7 @@ import sys
 # Append the utils directory to sys.path
 sys.path.append(r"D:\program_file\DAA_lab\DAA_files\utils")
 
-from utils.timer import Timer
+from LAB_1.timer import Timer
 
 def binary_serach(arr, low, high, key) -> int:
     if low > high:

@@ -3,7 +3,7 @@ import os
 # Append the utils directory to sys.path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from utils.timer import Timer
+from LAB_1.timer import Timer
 import matplotlib.pyplot as plt
 
 def naive_search(pattern:str, text:str) -> None:
