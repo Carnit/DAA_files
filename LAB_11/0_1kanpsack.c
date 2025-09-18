@@ -26,6 +26,6 @@ int main() {
   int weight[] = {10, 20, 30, 40, 50};
   int W = 50;
   int n = sizeof(profit) / sizeof(profit[0]);
-  printf("%d", kanpsack(W, weight, profit, n));
+  printf("total profit is \n %d", kanpsack(W, weight, profit, n));
   return 0;
 }

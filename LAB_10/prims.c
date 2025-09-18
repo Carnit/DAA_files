@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
+#include <limits.h >
 #define MAX_VERTICES 100
 
 typedef struct {
